@@ -10,6 +10,7 @@
 #import "TiNfcNfcAdapterProxy.h"
 #import "TiNfcNdefMessageProxy.h"
 #import "TiUtils.h"
+#import "ti_nfc-Swift.h"
 
 @implementation TiNfcNfcAdapterProxy
 
@@ -45,6 +46,8 @@
 
 - (void)begin:(id)unused
 {
+  testSwift *tags = [[testSwift alloc] init];
+  NSLog(@"%@", tags.printStr);
   [[self nfcSession] beginSession];
 }
 

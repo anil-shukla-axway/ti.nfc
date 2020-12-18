@@ -18,6 +18,8 @@
 
 #pragma mark Public API's
 
+@property (weak, nonatomic) NSNumber *numberOne;
+
 - (NSNumber *)isEnabled:(id)unused;
 
 - (void)begin:(id)unused;
