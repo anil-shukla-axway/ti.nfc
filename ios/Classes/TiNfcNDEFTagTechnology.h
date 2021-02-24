@@ -11,7 +11,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TiNfcNDEFTagTechnology : TiNfcNativeTagTechnologyProxy
+@interface TiNfcNDEFTagTechnology : TiProxy {
+  NFCNDEFReaderSession *session;
+  id<NFCNDEFTag> _tag;
+}
+
+- (id)_initWithPageContext:(id<TiEvaluator>)context andSession:(NFCNDEFReaderSession *)session andTag:(id<NFCNDEFTag>)tag;
+
+- (NSNumber *)available;
+
+- (void)queryNDEFStatus;
+
+- (void)readNDEF:(id)args;
+
+- (void)writeNDEF:(id)args;
+
+- (void)writeLock:(id)args;
 
 @end
 
